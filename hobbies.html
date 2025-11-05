@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-gradient: linear-gradient(135deg, #74b9ff, #0984e3);
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .hobby-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .hobby-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hobby-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .hobby-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            width: 100%;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+
+        .description-section {
+            margin-bottom: 2rem;
+        }        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        
+        <header class="header">
+            <h1>My Hobbies</h1>
+        </header>
+
+        <section class="hobby-section">
+            <h2 class="hobby-title">My Travels</h2>
+            <img src="images/IMG_1904.jpeg" alt="Hobby 1" class="hobby-image">
+            <div class="image-gallery">
+                <img src="images/IMG_1942.jpeg" alt="Hobby 1 Gallery Image 1" class="gallery-image">
+                <img src="images/IMG_8750.jpeg" alt="Hobby 1 Gallery Image 2" class="gallery-image">
+                <img src="images/IMG_8956.jpeg" alt="Hobby 1 Gallery Image 3" class="gallery-image">
+            </div>
+            <div class="description-section">
+                <p class="hobby-description">I love to travel around the country and the globe to see the majestic wonders each place has to offer. From beaches to mountains, to Washington DC and mountains, traveling to unique places is fulfilling. I get a taste of what life is like and the beauty of different places. I have been to 29 out of the 50 states and 3 countries outside of the United States. My travel goals are to visit all 50 states, Italy, France, and Asia.</p>
+                <p class="hobby-description">One of my most memorable travel experiences was visiting the Grand Canyon, where the vastness and natural beauty left me speechless. The way the light changes throughout the day creates an ever-evolving masterpiece that photographs simply cannot capture. Each visit to a new destination teaches me something about different cultures, cuisines, and ways of life that I carry with me long after returning home.</p>
+                <p class="hobby-description">Traveling has also taught me valuable life skills like adaptability, planning, and appreciation for the simple things. Whether it's trying new foods, learning basic phrases in different languages, or navigating unfamiliar transportation systems, each journey makes me more confident and open-minded. I believe that travel is one of the best investments you can make in yourself, as it broadens your perspective and creates lasting memories.</p>
+            </div>
+        </section>
+
+        <section class="hobby-section">
+            <h2 class="hobby-title">Sports</h2>
+            <img src="images/IMG_2827.jpeg" alt="Hobby 2" class="hobby-image">
+            <div class="image-gallery">
+                <img src="images/IMG_2828.jpeg" alt="Hobby 2 Gallery Image 1" class="gallery-image">
+                <img src="images/IMG_2879.JPG" alt="Hobby 2 Gallery Image 2" class="gallery-image">
+                <img src="images/IMG_2880.JPG" alt="Hobby 2 Gallery Image 3" class="gallery-image">
+            </div>
+            <div class="description-section">
+                <p class="hobby-description">Ever since my adolescence, watching sports became a major part of my life. I love to cheer on the Vikings, Timberwolves, and other Minnesota sports teams. I also love to watch NASCAR races; I have been a Kyle Busch fan since I was eight years old. I have been to numerous NFL games, including the last Vikings game at the Metrodome, some games at US Bank Stadium, and a preseason game in Nashville. I have also been to a few NASCAR races in Bristol, Tennessee and Brooklyn, Michigan. I have also been outside of Daytona International Speedway, home of the Daytona 500.</p>
+                <p class="hobby-description">The atmosphere at live sporting events is unlike anything else. The energy of the crowd, the anticipation of each play, and the shared excitement with thousands of other fans creates an unforgettable experience. Whether it's the roar of the crowd at a Vikings touchdown or the thunder of engines at a NASCAR race, being there in person adds a whole new dimension to watching sports that television simply cannot replicate.</p>
+                <p class="hobby-description">Sports have taught me about perseverance, teamwork, and the importance of supporting your team through both victories and defeats. Following my favorite teams has given me a sense of community and belonging, connecting me with other fans who share the same passion. The memories I've made at these games and races will last a lifetime, and I look forward to creating many more as I continue to follow my favorite teams and drivers.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

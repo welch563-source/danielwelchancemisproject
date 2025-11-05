@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-gradient: linear-gradient(135deg, #74b9ff, #0984e3);
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .resume-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 2rem 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+        }
+
+        .resume-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .education-item, .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: bold;
+        }
+
+        .item-date {
+            color: var(--accent-color);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .skill-item {
+            background: rgba(9, 132, 227, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        
+        <div class="resume-card">
+            <div class="header">
+                <h1>My Resume</h1>
+                <a href="files/Daniel Welchance's Resume  -6.pdf" class="download-button" download>
+                    Download PDF Version
+                </a>
+            </div>
+
+            <div class="resume-content">
+                <!-- Contact Information -->
+                <div class="section contact-info">
+                    <h2 class="section-title">Contact Information</h2>
+                    <p>Daniel Welchance</p>
+                    <p>Email: your.email@example.com</p>
+                    <p>Phone: (XXX) XXX-XXXX</p>
+                    <p>Location: Duluth, MN</p>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-title">University of Minnesota Duluth</span>
+                            <span class="item-date">Expected Graduation: [Year]</span>
+                        </div>
+                        <p>Major: [Your Major]</p>
+                        <p>Minor: [Your Minor, if applicable]</p>
+                        <p>GPA: [Your GPA]</p>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="section">
+                    <h2 class="section-title">Experience</h2>
+                    <!-- Add your experience items here -->
+                </div>
+
+                <!-- Skills -->
+                <div class="section">
+                    <h2 class="section-title">Skills</h2>
+                    <ul class="skills-list">
+                        <!-- Add your skills here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
