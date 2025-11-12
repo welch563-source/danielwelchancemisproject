@@ -374,10 +374,12 @@
             <div class="game-controls">
                 <button class="button" id="resetBtn">New Game</button>
                 <button class="button secondary" id="resetScoreBtn">Reset Score</button>
-                <button class="button" id="audioToggleBtn">Play Waves</button>
             </div>
-            <audio id="bgAudio" loop>
-                <source src="videos/peaceful-waves.mp3" type="audio/mpeg">
+            <audio id="bgAudio" loop preload="auto">
+                <source src="lounge-jazz-elevator-music-425314.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="moveSound" preload="auto">
+                <source src="flip-switch-304548.mp3" type="audio/mpeg">
             </audio>
         </div>
     </div>
@@ -428,6 +430,11 @@
                     return;
                 }
 
+                // Start background music on first game interaction
+                if (typeof window.startBackgroundMusic === 'function') {
+                    window.startBackgroundMusic();
+                }
+
                 this.makeMove(index);
             }
 
@@ -456,6 +463,13 @@
                 const cell = document.querySelector(`[data-index="${index}"]`);
                 cell.innerHTML = this.getIconHtml(this.currentPlayer);
                 cell.classList.add(this.currentPlayer.toLowerCase());
+                
+                // Play move sound effect
+                const moveSound = document.getElementById('moveSound');
+                if (moveSound) {
+                    moveSound.currentTime = 0; // Reset to start for immediate replay
+                    moveSound.play().catch(e => console.warn('Move sound could not be played:', e));
+                }
                 
                 // Add animation
                 cell.style.transform = 'scale(0)';
@@ -578,50 +592,56 @@
             body.classList.add('dark-mode');
         }
 
-        // Initialize the game
-        const game = new TicTacToe();
-
-        // Background peaceful wave audio controls
-        const audioEl = document.getElementById('peaceful-waves.mp3');
-        const audioToggleBtn = document.getElementById('audioToggleBtn');
-        let audioEnabled = false;
-
-        function updateAudioButton() {
-            audioToggleBtn.textContent = audioEnabled ? 'Pause Waves' : 'Play Waves';
-        }
-
-        audioToggleBtn.addEventListener('click', async () => {
+        // Background lounge jazz music - will play on first user interaction
+        const bgAudio = document.getElementById('bgAudio');
+        let musicStarted = false;
+        
+        // Function to start background music (no console warnings) - made global for game class
+        window.startBackgroundMusic = async () => {
+            if (musicStarted || !bgAudio || !bgAudio.paused) return;
+            
             try {
-                if (!audioEnabled) {
-                    await audioEl.play();
-                    audioEnabled = true;
-                } else {
-                    audioEl.pause();
-                    audioEnabled = false;
-                }
-                updateAudioButton();
+                bgAudio.volume = 0.5; // Set volume to 50% for background music
+                await bgAudio.play();
+                musicStarted = true;
+                return true;
             } catch (e) {
-                // Autoplay restrictions or missing file
-                audioEnabled = false;
-                updateAudioButton();
-                console.warn('Audio could not be played:', e);
-            }
-        });
-
-        // Prime audio on first interaction to satisfy autoplay policies
-        const primeAudio = async () => {
-            if (audioEnabled) return;
-            try {
-                await audioEl.play();
-                audioEnabled = true;
-                updateAudioButton();
-                window.removeEventListener('click', primeAudio);
-            } catch (_) {
-                // Ignore; user can press the button
+                // Silently handle autoplay restrictions - will retry on next interaction
+                return false;
             }
         };
-        window.addEventListener('click', primeAudio, { once: true });
-        updateAudioButton();
+
+        // Function to ensure music starts on any user interaction
+        const ensureMusicPlays = async () => {
+            if (!musicStarted) {
+                await window.startBackgroundMusic();
+            }
+        };
+
+        // Try to play on ANY click anywhere on the page
+        document.addEventListener('click', ensureMusicPlays, { once: true });
+        
+        // Try to play on touch (mobile)
+        document.addEventListener('touchstart', ensureMusicPlays, { once: true });
+        
+        // Try to play on keyboard interaction
+        document.addEventListener('keydown', ensureMusicPlays, { once: true });
+        
+        // Try to play when user interacts with game board
+        document.addEventListener('mousedown', ensureMusicPlays, { once: true });
+
+        // Initialize the game AFTER setting up music listeners
+        const game = new TicTacToe();
+        
+        // Also try to start music when game cells are clicked (backup)
+        const cells = document.querySelectorAll('.cell');
+        cells.forEach(cell => {
+            cell.addEventListener('click', ensureMusicPlays, { once: true });
+        });
+        
+        // Try to start music when buttons are clicked (backup)
+        document.getElementById('resetBtn').addEventListener('click', ensureMusicPlays, { once: true });
+        document.getElementById('resetScoreBtn').addEventListener('click', ensureMusicPlays, { once: true });
     </script>
 </body>
 </html>
