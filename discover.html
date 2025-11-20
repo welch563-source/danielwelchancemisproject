@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Chose UMD and Duluth</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-gradient: linear-gradient(135deg, #74b9ff, #0984e3);
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #636e72;
+            margin-bottom: 2rem;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        
+        <header class="header">
+            <h1>Why I Chose UMD and Duluth</h1>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Why I Chose UMD</h2>
+            <img src="images/IMG_9468 4.jpeg" alt="UMD Campus" class="section-image">
+            <p class="section-description">There are a few key reasons why I decided to attend college at the University of Minnesota Duluth. One key reason why I chose UMD is the fact that my brother also attended UMD, so I learned a great deal about UMD from him. I have been in Duluth and on campus several times during high school while my brother studied at UMD. I also chose UMD because of the good things I heard about the Labovitz School of Business & Economics, much of which my brother told me about. Another reason I chose UMD was the Duluth area in general. I have always been fascinated by the beauty of Duluth and the North Shore, which I will talk more about in the following section. To this point, UMD and LSBE have been great for me so far, and I have met many friends and great professors in my time here so far.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">What I Like About the Duluth Area</h2>
+            <img src="images/IMG_7354.jpeg" alt="Duluth Area" class="section-image">
+            <p class="section-description">There are many different aspects that I am fascinated with about Duluth and the North Shore, particularly the beautiful and breathtaking views of the area. In my prior vacations and trips up to Duluth, I have always found the view of Lake Superior and Duluth as a whole very beautiful. In my experience, the view of Duluth from atop Enger Tower is one of the greatest highlights of Duluth, as Lake Superior and the Lift Bridge make for a great sight. Being able to see Lake Superior and the breathtaking views everyday is one thing I love about Duluth. Additionally, the numerous sights along the North Shore, including Gooseberry Falls, Split Rock Lighthouse, numerous other lighthouses, Grand Marais, and Grand Portage, are fascinating experiences for me. Every fall since 2023, I have taken trips up the North Shore as the colors of the leaves changed, and it is beautiful to see every time. The breathtaking views and landmarks to see are key things I love about Duluth and the North Shore.</p>
+        </section>
+   
+        <!-- Video Section -->
+        <section class="section discover-section video-section" id="umd-video">
+            <h2 class="section-title"><i class="fas fa-play-circle"></i> Experience UMD</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/Take2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="section-description">Enjoy this Pictory AI video, created with my teammates, showcasing Duluth.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

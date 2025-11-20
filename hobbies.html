@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-gradient: linear-gradient(135deg, #74b9ff, #0984e3);
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .hobby-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .hobby-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hobby-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .hobby-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            width: 100%;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+
+        .description-section {
+            margin-bottom: 2rem;
+        }        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        
+        <header class="header">
+            <h1>My Hobbies</h1>
+        </header>
+
+        <section class="hobby-section">
+            <h2 class="hobby-title">My Travels</h2>
+            <img src="images/IMG_1904.jpeg" alt="Hobby 1" class="hobby-image">
+            <div class="image-gallery">
+                <img src="images/IMG_1942.jpeg" alt="Hobby 1 Gallery Image 1" class="gallery-image">
+                <img src="images/IMG_8750.jpeg" alt="Hobby 1 Gallery Image 2" class="gallery-image">
+                <img src="images/IMG_1888.jpeg" alt="Hobby 1 Gallery Image 3" class="gallery-image">
+            </div>
+            <div class="description-section">
+                <p class="hobby-description">I love to travel around the country and the globe to see the majestic wonders each place has to offer. From beaches to mountains, or Washington DC to Nashville, traveling to unique places is fulfilling. I get a taste of what life is like in different places as well as the beauty of each place, which I am able to enjoy wherever I travel to. I have been to 29 out of the 50 states and 3 countries outside of the United States. My travel goals are to visit all 50 states, Italy, France, and Asia.</p>
+                <p class="hobby-description">I have been on several amazing trips during my life, but the two greatest trips I went on were to Washington DC and a Caribbean cruise. In the summer of 2024, me and my family went to Washington DC and saw countless amazing monuments and places important to American history. We went inside the White House, the US Capitol (as seen in the middle picture on the bottom), the Washington Monument, several of the Smithsonians, the National Cathedral, and so much more. The Caribbean cruise was also a blast, with lots of good food, entertainment, and stops along the way. We stopped in Falmouth, Jamaica and Nassau, The Bahamas. I got to experience a little taste of Jamaican life and saw Atlantis when in Nassau. These trips are very fun for me to go on, and I hope there are more in my future.</p>
+                <p class="hobby-description">Traveling is crucially important to me because I am able to see the beauty each different place has to offer, the different cultures, and different ways of life. Traveling to different places allows me to be open-minded about those places, set aside preconceived notions, and enjoy the lifestyle and opportunities of the different places. Traveling also brings me a great sense of joy. I have always sought adventure by going to so many different places. Traveling to the different places I have been to brings me a great sense of joy as I get to make memories with my family or myself when I go solo on road trips. Traveling is an important part of my life becasue it broadens my understanding of different places and fosters great memories.</p>
+            </div>
+        </section>
+
+        <section class="hobby-section">
+            <h2 class="hobby-title">Sports</h2>
+            <img src="images/IMG_2827.jpeg" alt="Hobby 2" class="hobby-image">
+            <div class="image-gallery">
+                <img src="images/IMG_2828.jpeg" alt="Hobby 2 Gallery Image 1" class="gallery-image">
+                <img src="images/IMG_2879.JPG" alt="Hobby 2 Gallery Image 2" class="gallery-image">
+                <img src="images/IMG_2880.JPG" alt="Hobby 2 Gallery Image 3" class="gallery-image">
+            </div>
+            <div class="description-section">
+                <p class="hobby-description">Ever since my adolescence, watching sports became a major part of my life. I love to cheer on the Vikings, Timberwolves, and other Minnesota sports teams. I also love to watch NASCAR races; I have been a Kyle Busch fan since I was eight years old. I have been to numerous NFL games, including the last Vikings game at the Metrodome, some games at US Bank Stadium, and a preseason game in Nashville. I have also been to a few NASCAR races in Bristol, Tennessee and Brooklyn, Michigan. Today, one of my favorite sporting events to attend are UMD hockey games.</p>
+                <p class="hobby-description">Most of the time, I watch sports on the TV. However, I experience the great excitement of a late game thriller with the Vikings and Timberwolves, and my heart races as I watch a thrilling NASCAR finish. However, I have watched some amazing games and races in person. Watching NASCAR races in Bristol, Tennessee when I was eight years old was very exciting to watch in person. The roar of the engines and the thrill of bumper-to-bumper racing left me starstruck. I have also been to numerous Minnesota Vikings game. In particular, I watched the final game at the Metrodome, which the Vikings won. I also watched the Vikings play at U.S. Bank Stadium. The energy in the stadium was quite palpable as we cheered the Vikings on. As a UMD student, I have attended many of the Bulldog hockey games in the front row, behind the net. The energy in the arena is amazing when the Bulldogs zip down the ice and score goals right in front of us. UMD Bulldog hockey games are amazing for me to watch. </p>
+                <p class="hobby-description">Watching sports is greatly important to me because they have been a part of my life since I was very young. Watching football and NASCAR have fascinated me beginning from a young age, and my loyalty to Minnesota sports teams and certain NASCAR drivers give me great motivation to watch those events. The adrenaline rush from watching exciting sporting events is amazing, and I love the rush for every event I watch. Whether it is on the TV, or feeling the energy in the stadium or arena, the exciting action of the sporting events is amazing. My lifelong passion for sports, and the excitement of each game, are why sports are very important in my life.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

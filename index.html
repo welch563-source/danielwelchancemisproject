@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Interactive Experience</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-gradient: linear-gradient(135deg, #74b9ff, #0984e3);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-color: #636e72;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            color: var(--primary-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        .welcome-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transform-origin: center;
+            animation: fadeIn 1s ease-out;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .introduction {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 2rem auto;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: block;
+        }
+
+        .hobbies-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        .hobby-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .hobby-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .hobby-content {
+            padding: 1.5rem;
+        }
+
+        .hobby-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hobby-description {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .welcome-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.2rem;
+            color: #636e72;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: slideDown 0.8s ease-out 0.2s forwards;
+        }
+
+        .video-section {
+            margin: 2rem 0;
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .interactive-elements {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            background: var(--bg-gradient);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            min-width: 200px;
+            text-align: center;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+        }
+
+        .button:active {
+            transform: translateY(-1px);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .welcome-card {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .welcome-title {
+                font-size: 2rem;
+            }
+
+            .interactive-elements {
+                flex-direction: column;
+            }
+        }
+
+        .dark-mode {
+            --bg-gradient: linear-gradient(135deg, #2d3436, #2c3e50);
+            --primary-color: #ffffff;
+        }
+
+        .dark-mode .welcome-card {
+            background: rgba(45, 52, 54, 0.95);
+            color: white;
+        }
+
+        .dark-mode .welcome-subtitle,
+        .dark-mode .hobby-description {
+            color: #dfe6e9;
+        }
+
+        .dark-mode .hobby-title {
+            color: white;
+        }
+
+        .dark-mode .hobby-card {
+            background: rgba(45, 52, 54, 0.95);
+        }
+
+        .dark-mode .introduction {
+            background: rgba(45, 52, 54, 0.95);
+            color: #dfe6e9;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        🌓
+    </button>
+    <div class="container">
+        <div class="welcome-card">
+            <h1 class="welcome-title">Welcome to My Website!</h1>
+            <p class="welcome-subtitle">Welcome to my personal website, where you can learn a lot more about myself. Hit the play button to play an introductory video, created by Pictory AI, to get you started as you browse my website!</p>
+                        <div class="video-section">
+                <h2 class="section-title">Welcome Video</h2>
+                <div class="welcome-video">
+                    <video controls width="100%">
+                        <source src="videos/Website_Intro_Video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="centered-button-container">
+                <a href="hobbies.html" class="button" id="hobbiesBtn">My Hobbies</a>
+                <a href="discover.html" class="button" id="discoverBtn">Why I Chose UMD and Duluth</a>
+                <a href="resume.html" class="button" id="resumeBtn">Resume</a>
+                <a href="career.html" class="button" id="careerBtn">Career Interests</a>
+                <a href="game.html" class="button" id="gameBtn">Interactive Game</a>
+            </div>
+        </div>
+
+        <div class="introduction">
+            <img src="images/Image-1.JPG" alt="Profile Picture" class="profile-image">
+            <h2>About Me</h2>
+            <p>Hello everyone! My name is Daniel Welchance, a first-year accounting major at the University of Minnesota Duluth. As someone who loves numbers, I find accounting fascinating, and I am eager to apply what I have learned and what I will learn to a real-world accounting or financial setting. On this website, you will learn more in depth about my hobbies, college at the University of Minnesota Duluth, my resume, career interests, and a fun interactive game. Thank you for looking at my website and learning more about me!</p>
+        </div>
+
+        <div class="hobbies-section">
+            <div class="hobby-card">
+                <img src="images/IMG_1904.jpeg" alt="Travel Scene" class="hobby-image">
+                <div class="hobby-content">
+                    <h3 class="hobby-title">My Travels</h3>
+                    <p class="hobby-description">Traveling to different places is one of my favorite activities to do. Whether it is on the oceanfront, or deep in the mountains, I love to travel to different places and see the beauty different places have to offer.
+                    </p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <img src="images/IMG_2827.jpeg" alt="Sports" class="hobby-image">
+                <div class="hobby-content">
+                    <h3 class="hobby-title">Sports</h3>
+                    <p class="hobby-description">Watching sports have been a major part of my life from a young age, and I love watching a wide variety of sports. Whether it is cheering on the Minnesota Vikings, Timberwolves, my favorite NASCAR drivers, or just watching college sports, I love watching a myriad of sports and rooting for my favorite teams. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            body.classList.add('dark-mode');
+        }
+
+        // Interactive Buttons
+        const exploreBtn = document.getElementById('exploreBtn');
+        const contactBtn = document.getElementById('contactBtn');
+
+        exploreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Welcome to the exploration journey! This is where your adventure begins.');
+        });
+
+        contactBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Thanks for wanting to connect! This is where your contact form would appear.');
+        });
+
+        // Particle Animation
+        class Particle {
+            constructor() {
+                this.x = Math.random() * window.innerWidth;
+                this.y = Math.random() * window.innerHeight;
+                this.size = Math.random() * 5 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > window.innerWidth || this.x < 0) this.speedX *= -1;
+                if (this.y > window.innerHeight || this.y < 0) this.speedY *= -1;
+            }
+
+            draw(ctx) {
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Setup canvas for particles
+        const canvas = document.createElement('canvas');
+        canvas.classList.add('particles');
+        document.body.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Create particles
+        const particles = Array.from({ length: 50 }, () => new Particle());
+
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw(ctx);
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Mouse interaction with particles
+        document.addEventListener('mousemove', (e) => {
+            particles.forEach(particle => {
+                const dx = e.x - particle.x;
+                const dy = e.y - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 100) {
+                    particle.x += dx * 0.01;
+                    particle.y += dy * 0.01;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

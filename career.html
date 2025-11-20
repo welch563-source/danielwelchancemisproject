@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Interests</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-gradient: linear-gradient(135deg, #74b9ff, #0984e3);
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .company-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .company-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .info-section {
+            background: rgba(9, 132, 227, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .contact-item {
+            padding: 0.5rem;
+        }
+
+        .contact-label {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: var(--accent-color);
+        }
+
+        .qualifications {
+            background: rgba(9, 132, 227, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .qualification-list {
+            list-style: none;
+        }
+
+        .qualification-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .qualification-item::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        
+        <header class="header">
+            <h1>Career Interests & Companies I Am Interested in Working For</h1>
+        </header>
+
+        <section class="company-card">
+            <h2 class="company-title">Conway, Deuth, & Schmiesing, PLLP Summer 2027 Internship</h2>
+            
+            <div class="info-section">
+                <h3 class="section-title">Company Contact Information</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-label">Company Name</div>
+                        <div class="contact-value">Conway, Deuth, & Schmiesing, PLLP</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Address</div>
+                        <div class="contact-value">331 Third St SW, Unit 2
+                        </div>
+                        <div class="contact-value">Willmar, MN 56201</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">(320) 235-3311</div>
+                    </div>
+                    <div class="contact-item">
+                      <div class="contact-label">Website</div>
+                       <a href="https://www.cdscpa.com" target="_blank" rel="noopener noreferrer">
+                          https://www.cdscpa.com
+                         </a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="qualifications">
+                <h3 class="section-title">What Makes Me Qualified</h3>
+                <ul class="qualification-list">
+                    <li class="qualification-item">I am a current first-year major at the University of Minnesota Duluth</li>
+                    <li class="qualification-item">Superb academic performance and capabilities in accounting courses at UMD</li>
+                    <li class="qualification-item">Strong communication capabilities with clients and coworkers</li>
+                    <li class="qualification-item">Excellent understanding of core accounting principles and practices</li>
+                    <li class="qualification-item">Strong organizational skills and great attention to detail
+                </ul>
+            </div>
+
+            <div class="qualifications">
+                <h3 class="section-title">How My Skills Align With This Opportunity</h3>
+                <ul class="qualification-list">
+                    <li class="qualification-item">As an accounting major, I can apply what I have learned in my coursework in the real world by assisting with accounting procedures.</li>
+                    <li class="qualification-item">My strong organizational skills and attention to detail will greatly assist in ensuring the accuracy of accounting and financial records.</li>
+                    <li class="qualification-item">My strong communication skills would allow me to communicate effectively with clients and coworkers regarding transactions and accounting records.</li>
+                    <li class="qualification-item">My skills and excitement to grow within the accounting field will make me a motivated and dedicated intern for the company.</li>
+                </ul>
+            </div>
+            
+        </section>
+
+        <section class="company-card">
+            <h2 class="company-title">Christianson CPA's & Consultants 2026 Accounting Internship</h2>
+            
+            <div class="info-section">
+                <h3 class="section-title">Company Contact Information</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-label">Company Name</div>
+                        <div class="contact-value">Christianson CPA's and Consultants</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Address</div>
+                        <div class="contact-value">302 Fifth St SW</div>
+                        <div class="contact-value">Willmar, MN 56201</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">(320) 235-5937</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Website</div>
+                         <a href="https://www.christiansoncpa.com" target="_blank" rel="noopener noreferrer">
+                          https://www.christiansoncpa.com
+                         </a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="qualifications">
+                <h3 class="section-title">What Makes Me Qualified</h3>
+                <ul class="qualification-list">
+                    <li class="qualification-item">Accounting major seeking to develop their skills in accounting with an internship</li>
+                    <li class="qualification-item">Considerable ability to contribute new ideas and perspectives to a team</li>
+                    <li class="qualification-item">Excellent interpersonal and analytical skills</li>
+                    <li class="qualification-item">Strong organizational skills and attention to detail</li>
+                    <li class="qualification-item">Superb time-management skills and ability to work in a complex team environment.</li>
+                </ul>
+            </div>
+
+            <div class="qualifications">
+                <h3 class="section-title">How My Skills Align With This Opportunity</h3>
+                <ul class="qualification-list">
+                    <li class="qualification-item">As an accounting major, this internship would be a great opportunity to apply what I have learned and expand my skills in accounting.</li>
+                    <li class="qualification-item">My eagerness to contribue new ideas and perspectives to a team would help myself Christianson thrive as well as expand my accounting knowledge.</li>
+                    <li class="qualification-item">My analyitcal and organizational skills would allow me to pay close attention to accounting records and statements, ensure the accuracy of such statements, and bolster my skills in an accounting setting.</li>
+                    <li class="qualification-item">The time-management skills I have would allow me to complete high-quality work by given deadlines.</li>
+                    <li class="qualification-item">In my past experiences, I have demonstrated great teamwork and communication in complex team environments. These skills would allow me to work and perform greatly with thr Christainson team.</li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+</body>
+</html>

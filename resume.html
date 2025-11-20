@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-gradient: linear-gradient(135deg, #74b9ff, #0984e3);
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .resume-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 2rem 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+        }
+
+        .resume-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .education-item, .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: bold;
+        }
+
+        .item-date {
+            color: var(--accent-color);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .skill-item {
+            background: rgba(9, 132, 227, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        
+        <div class="resume-card">
+            <div class="header">
+                <h1>My Resume</h1>
+                <a href="files/Daniel Welchance's Resume  -6.pdf" class="download-button" download>
+                    Download PDF Version
+                </a>
+            </div>
+
+            <div class="resume-content">
+                <!-- Contact Information -->
+                <div class="section contact-info">
+                    <h2 class="section-title">Contact Information</h2>
+                    <p>Daniel Welchance</p>
+                    <p>Email: welch563@d.umn.edu</p>
+                    <p>Phone: (320) 220-0110</p>
+                    <p>Location: Duluth, MN</p>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">My Education</h2>
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-title">University of Minnesota Duluth</span>
+                            <span class="item-date">Expected Graduation: May 2028</span>
+                        </div>
+                        <p>Major: Accounting</p>
+                        <p>GPA: 4.0</p>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="item-header">
+                                <span class="item-title">Ridgewater College</span>
+                                <span class="item-date">Graduation: May 2025</span>
+                            </div>
+                            <p>Major: Liberal Arts & Sciences</p>
+                            <p>GPA: 4.0</p>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="item-header">
+                                <span class="item-title">BOLD High School</span>
+                                <span class="item-date">Graduation: May 2025</span>
+                            </div>
+                            <p>GPA: 4.0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="section">
+                    <h2 class="section-title">My Experience</h2>
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div class="item-title">UMD Department of Education</div>
+                            <div class="item-title">Student Office Department Assistant</div>
+                            <div class="item-date">September 2025 - Present</div>
+                        </div>
+                        <p>My duties include assisting Education Department students and staff in obtaining various office supplies, completing field experience badges for students who request them, responding to emails and phone calls, and digitizing school files in the department's database.</p>
+                        <span class="space-horizontal"></span>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <span class="item-title">UMD Custodial Housing</span>
+                                <span class="item-title">Project Relief Student Worker</span>
+                                <span class="item-date">September 2025 - Present</span>
+                            </div>
+                            <p>As a Project Relief Student Worker, my duties are to clean various on campus apartments that nobody else is assigned to for a given day. I engage in vacuuming, sweeping, washing windows and tables, and emptying trash cans. Other duties include assisting Custodial Housing with other department projects as needed.</p>
+                            <span class="space-horizontal"></span>
+                            </div>
+                        
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <span class="item-title">B&D Market</span>
+                                <span class="item-title">Evening/Weekend Manager</span>
+                                <span class="item-date">July 2021 - August 2025</span>
+                            </div>
+                            <p>My duties as an Evening/Weekend Manager included cashiering, responding to customer inquiries about products, restocking produce, record lottery ticket numbers, train new hires on the tills, and engage in general store oversight to ensure everything is running smoothly.</p>
+                            <span class="space-horizontal"></span>
+                            </div>
+
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <span class="item-title">Renville County Food Shelf</span>
+                                <span class="item-title">Volunteer</span>
+                                <span class="item-date">June 2023 - August 2025</span>
+                            </div>
+                            <p>As a volunteer at the Renville County Food Shelf, I assisted food shelf clients in receiving the items of food they wished to receive. I also assisted in restocking the food as needed, cleaning off carts to prepare for the next client, and helping several other volunteers to move and unload a biweekly food truck for the food shelf.</p>
+                            <span class="space-horizontal"></span>
+                            </div>
+
+                <!-- Professional Skills -->
+                <div class="section">
+                    <h2 class="section-title">My Skills</h2>
+                    <ul>
+                        <li>Excellent time management skills</li>
+                        <li>Superb organizational skills</li>
+                        <li>Great attention to detail</li>
+                        <li>Critical thinking skills</li>
+                        <li>Clear and effective communication with coworkers and superiors</li>
+                        <li>High responsibility</li>
+                        <li>Takes initiative for tasks</li>
+                    </ul>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
